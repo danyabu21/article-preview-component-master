@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --veryDarkGravishBlue: #48556a;
+  --desaturedDarkBlue: #6d7f97;
+  --gravishBlue: #9eafc2;
+  --lightGravishBlue: #ecf2f8;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+span,
+p {
+  margin: 0;
+}
+
+body {
+  background: var(--gravishBlue);
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  border-radius: 5px;
+  background: var(--lightGravishBlue);
+  max-width: 700px;
+  width: 100%;
+}
+
+.article-img {
+  border-radius: 5px 0 0 5px;
+  width: 40%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-text {
+  padding: 30px;
+}
+
+.card-text h1 {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  word-break: break-word;
+
+  color: var(--veryDarkGravishBlue);
+}
+
+.card-text p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+
+  color: var(--veryDarkGravishBlue);
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-img {
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-name h2 {
+  font-size: 1.4rem;
+  color: var(--veryDarkGravishBlue);
+  margin-bottom: 5px;
+}
+
+.profile-name span {
+  font-size: 1.2rem;
+  color: var(--gravishBlue);
+}
+
+.btn-share {
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  padding: 8px;
+  background: var(--gravishBlue);
+  border-radius: 50%;
+  position: relative;
+  margin-left: 15px;
+}
+
+.share-active {
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  padding: 8px;
+  background: var(--desaturedDarkBlue);
+  border-radius: 50%;
+  margin-left: 15px;
+  display: none;
+}
+
+.btn-share-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+  width: 200px;
+  background: #48556a;
+  border-radius: 10px;
+  position: absolute;
+  top: -85px;
+  right: -97px;
+  box-shadow: 1px 1px 20px #9eafc2;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+.btn-share-icons::before {
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 22px solid var(--veryDarkGravishBlue);
+  position: absolute;
+  top: 49px;
+}
+.btn-share.active .btn-share-icons {
+  opacity: 1;
+}
+
+.btn-share-icons span {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .btn-share-icons {
+    right: -70px;
+  }
+
+  .btn-share-icons::before {
+    right: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 620px) {
+  .card {
+    width: 370px;
+    flex-direction: column;
+  }
+
+  .article-img {
+    width: 100%;
+    height: 200px;
+    object-position: top center;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 15px;
+  }
+
+  .card-text p {
+    margin-bottom: 30px;
+  }
+
+  .btn-share {
+    padding: 8px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .btn-share.active {
+    background: var(--lightGravishBlue);
+  }
+
+  .btn-share-icons {
+    box-sizing: border-box;
+    top: -25px;
+    right: -30px;
+    opacity: 0;
+    transition: 0.1s;
+    border-radius: 0 0 4px 4px;
+    width: 370px;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 20px; */
+    padding: 30px;
+    height: 80px;
+  }
+
+  .btn-share.active .share-active {
+    display: initial;
+    padding: 6px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn-share-icons::before {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 320px;
+  }
+
+  .card-text {
+    padding: 25px;
+  }
+
+  .card-text {
+    padding: 20px;
+  }
+
+  .card-text h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .card-text p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .profile-name {
+    gap: 7px;
+  }
+
+  .profile-name h2 {
+    font-size: 1rem;
+  }
+
+  .profile-name span {
+    font-size: 1rem;
+  }
+
+  .profile-img {
+    width: 35px;
+  }
+
+  .btn-share {
+    padding: 6px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn-share-icons {
+    top: -25px;
+    width: 320px;
+    padding: 10px 20px;
+    right: calc(-20px);
+    height: 80px;
+  }
+}
